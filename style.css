@@ -1,0 +1,267 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #222;
+  font-size: 1.75em; 
+  position: relative;
+  overflow: hidden;
+}
+
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(img/cajaFondo.png);
+  background-size: 1000px;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.nombreCaja {
+  color: rgb(233, 219, 219);
+}
+
+.contenidoSuperior {
+  color: orange;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  margin-bottom: 40px;
+}
+
+.contenidoInferior {
+  color: orange;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+}
+
+.punteroSuperior {
+  background-color: orange;
+  height: 1px;
+  width: 800px;
+  margin-bottom: 0;
+  box-shadow: 0px 0px 20px orange;
+}
+
+.punteroInferior {
+  background-color: orange;
+  height: 1px;
+  width: 800px;
+  margin-top: 0;
+  box-shadow: 0px 0px 20px orange;
+}
+
+.trianguloInferior {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-bottom: 10px solid orange; 
+  margin-top: 0; 
+}
+
+.trianguloSuperior {
+  width: 0; 
+  height: 0; 
+  border-left: 10px solid transparent; 
+  border-right: 10px solid transparent; 
+  border-top: 10px solid orange; 
+  margin-bottom: 0; 
+}
+
+.container {
+  perspective: 800px;
+  width: 600px; 
+  height: 300px; 
+  position: relative;
+}
+
+.tarjeta {
+  width: 110px; 
+  height: 150px; 
+  background-color: #442222;
+  font-size: 50px; 
+  position: absolute;
+  top: 60px; 
+  left: 245px; 
+  border-radius: 10px;
+  text-align: center;
+  animation: Carrusel 4s linear infinite;
+}
+
+@keyframes Carrusel {
+  from {
+    transform: rotateY(0deg) translateZ(300px);
+    z-index: 10;
+    opacity: 0.9;
+  }
+  50% {
+    z-index: -10;
+  }
+  to {
+    transform: rotateY(360deg) translateZ(300px);
+    z-index: 10;
+  }
+}
+
+#tarjeta1 {
+  background-image: url(img/akruleta.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 10px rgb(0, 102, 255);
+  animation-delay: 0s;
+}
+
+#tarjeta2 {
+  background-image: url(img/aung.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -0.25s;
+  box-shadow: 0px 0px 10px rgb(0, 102, 255);
+}
+
+#tarjeta3 {
+  background-image: url(img/glock.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -0.5s;
+  box-shadow: 0px 0px 10px rgb(0, 102, 255);
+}
+
+#tarjeta4 {
+  background-image: url(img/scout.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -0.75s;
+  box-shadow: 0px 0px 10px rgb(0, 102, 255);
+}
+
+#tarjeta5 {
+  background-image: url(img/howl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -1s;
+  box-shadow: 0px 0px 10px rgb(255, 0, 0);
+}
+
+#tarjeta6 {
+  background-image: url(img/dragonlore.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -1.25s;
+  box-shadow: 0px 0px 10px rgb(255, 166, 0);
+}
+
+#tarjeta7 {
+  background-image: url(img/karambitbluegem.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -1.5s;
+  box-shadow: 0px 0px 10px rgb(0, 255, 128);
+}
+
+#tarjeta8 {
+  background-image: url(img/guantes.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -1.75s;
+  box-shadow: 0px 0px 10px rgb(255, 0, 0);
+}
+
+#tarjeta9 {
+  background-image: url(img/famas.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -2s;
+  box-shadow: 0px 0px 10px rgb(0, 102, 255);
+}
+
+#tarjeta10 {
+  background-image: url(img/deagle.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -2.25s;
+  box-shadow: 0px 0px 10px rgb(0, 102, 255);
+}
+
+#tarjeta11 {
+  background-image: url(img/bowie.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -2.5s;
+  box-shadow: 0px 0px 10px rgb(255, 255, 0);
+}
+
+#tarjeta12 {
+  background-image: url(img/howl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -2.75s;
+  box-shadow: 0px 0px 10px rgb(255, 255, 0);
+}
+
+#tarjeta13 {
+  background-image: url(img/howl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -3s;
+  box-shadow: 0px 0px 10px rgb(255, 255, 0);
+}
+
+#tarjeta14 {
+  background-image: url(img/howl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -3.25s;
+  box-shadow: 0px 0px 10px rgb(255, 255, 0);
+}
+
+#tarjeta15 {
+  background-image: url(img/howl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -3.5s;
+  box-shadow: 0px 0px 10px rgb(255, 255, 0);
+}
+
+#tarjeta16 {
+  background-image: url(img/howl.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-delay: -3.75s;
+  box-shadow: 0px 0px 10px rgb(255, 255, 0);
+}
+
+.tarjeta h3 {
+  color: white;
+  font-size: 9px; 
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-top: 120px; 
+  background-color: #ff0000;
+}
