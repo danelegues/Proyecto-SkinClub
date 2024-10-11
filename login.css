@@ -16,7 +16,7 @@ body {
     outline: none;
     font-size: 1rem;
     color: #fff;
-    width: 180px; 
+    width: 187px;
 }
 
 .container {
@@ -34,16 +34,15 @@ body {
 
 .login_box .foto {
     display: flex;
-    
 }
+
 .glass {
     position: relative;
-    width: 250px;
-    height: 420px;
+    width: 275px;
+    height: 480px;
     background: inherit;
     border-radius: 5%;
     overflow: hidden;
-    animation: resplandor 5s linear infinite;
     border: 1px solid white;
 }
 
@@ -56,14 +55,14 @@ body {
     height: 40px;
     font-weight: 600;
     transition: all 0.4s ease;
-    margin-left: 20px;
-    margin-top: 10px;
+    margin-left: 22px;
+    margin-top: 11px;
 }
 
 .glass::after {
     content: "";
-    width: 250px;
-    height: 450px;
+    width: 275px;
+    height: 462px;
     background: inherit;
     position: absolute;
     top: 0;
@@ -84,27 +83,27 @@ body {
 
 .login_box > * {
     display: inline-block;
-    width: 170px;
+    width: 187px;
 }
 
 .login_box a {
     color: white;
     text-align: center;
-    margin-left: 20px;
+    margin-left: 22px;
 }
 
 .texto {
     display: flex;
     justify-content: left;
     color: white;
-    font-size: 0.8rem;
+    font-size: 0.88rem;
 }
 
 .foto {
-    width: 150px;
-    height: 150px;
+    width: 165px;
+    height: 165px;
     border-radius: 50%;
     background-image: url(img/Adam_Bouaouda_Chaoui_Make_me_the_logo_of_skins_betting_website_that_mak_fb4a8a6d-6151-4220-a704-7f444873de23_preview_rev_1.png);
     background-size: cover;
-    margin-left: 33px;
+    margin-left: 36px;
 }
