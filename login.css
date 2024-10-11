@@ -107,3 +107,55 @@ body {
     background-size: cover;
     margin-left: 36px;
 }
+
+
+
+
+/*-------------redes sociales ---------------*/
+
+
+@import url(http://use.fontawesome.com/releases/v6.4.2/css/all.css);
+
+.redes_sociales {
+    position: fixed;
+    bottom: 20px;
+    right: 50px;
+    display: flex;
+    flex-direction: row; 
+    gap: 5px; 
+}
+
+.redes_sociales ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+}
+
+.redes_sociales li {
+    display: flex;
+}
+
+.redes_sociales a {
+    margin: 0 5px;
+    border-radius: 50%;
+    background: transparent;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: 0.5s;
+    color: var(--color);
+    font-size: 2em;
+}
+
+.redes_sociales a:hover {
+    background: var(--color);
+    color: #050801;
+    box-shadow: 0 0 5px var(--color),
+                0 0 25px var(--color),
+                0 0 50px var(--color),
+                0 0 200px var(--color);
+}
