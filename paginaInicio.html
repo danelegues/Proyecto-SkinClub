@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cs2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background: #222;
+        }
+        .navbar {
+            background-color: #181818;
+        }
+        .navbar a {
+            color: white !important;
+        }
+        .navbar a:hover {
+            color: rgb(233, 151, 0) !important;
+        }
+        .btn-custom {
+            background-color: #17a2b8;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #138496;
+        }
+        footer {
+            background-color: #181818;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            margin-top: 20px; /* Añadir margen superior para separar del contenido */
+        }
+        .progress {
+            height: 20px;
+        }
+        .content {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        aside.left-aside, aside.right-aside {
+            width: 20%;
+            background-color: #181818;
+            padding: 20px;
+            color: white;
+            border-radius: 10px;
+            height: 1200px; 
+            overflow: auto; 
+        }
+        .main-content {
+            width: 55%;
+        }
+
+        body, html {
+            padding: 0;
+            margin: 0;
+        }
+
+        a.jugador-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        a.jugador-link:hover {
+            color: rgb(233, 151, 0);
+        }
+
+        .left-aside ul {
+            text-align: left;
+            padding-left: 0;
+        }
+
+        .left-aside ul li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+        .btn-custom {
+        background-color: #6e6e6e; /* Gris claro */
+        color: #fff; /* Texto blanco */
+        border: none;
+        
+        border-radius: 5px;
+        font-size: 12px;
+        cursor: pointer;
+        }
+
+.btn-custom:hover {
+    background-color: #5a5a5a; /* Gris un poco más oscuro para el hover */
+}
+
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                display: flex;
+            }
+            aside.left-aside, aside.right-aside, .main-content {
+                width: 100%;
+                float: none;
+                margin: 0;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                CS2 Skins
+                <img src="img/LogoSkinDrop.png" style="width: 70px; height: 70px; margin-left: 10px;" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto"> 
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="#">Inicio</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="#">Inventario</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="#">Batllas</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-3" href="#">Tienda</a> 
+                    </li>
+            
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <div class="container-fluid mt-5">
+        <div class="content">
+            <aside class="left-aside">
+                <h2 class="text-center">Proximamente ESL Pro League</h2>
+                <br><br>
+                <div class="text-center">
+                    <iframe width="100%" height="315" src="https://www.youtube.com/embed/uE9BEO2pV-4" frameborder="0" allowfullscreen></iframe>
+                    <br><br><br>
+                    <h5 class="text-left">¡Las skins de los mejores!</h5><br>
+                    <ul class="list-unstyled">
+                        <li><a class="jugador-link" href="#">• S1mple</a></li>
+                        <li><a class="jugador-link" href="#">• ZywOo</a></li>
+                        <li><a class="jugador-link" href="#">• sh1ro</a></li>
+                        <li><a class="jugador-link" href="#">• B1t</a></li>
+                        <li><a class="jugador-link" href="#">• ropz</a></li>
+                        <li><a class="jugador-link" href="#">• Flusha</a></li>
+                        <li><a class="jugador-link" href="#">• danuflio</a></li>
+                        <li><a class="jugador-link" href="#">• Electronic</a></li>
+                        <li><a class="jugador-link" href="#">• Hobbit</a></li>
+                        <li><a class="jugador-link" href="#">• Ev1</a></li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Contenido Central -->
+            <div class="main-content">
+                <br><br><h1 class="text-center text-white">¿A quien no le mola abrir cajas?</h1>
+                <br><br>
+                
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <img src="img/descarga (2)-fotor-bg-remover-2024100313255.png" class="img-fluid" style="max-width: 150px;" onclick="window.open('index.html')">
+                        <p class="text-white small"> Caja AK47 </p>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/descarga (3)-fotor-bg-remover-202410031336.png" class="img-fluid" style="max-width: 150px;">
+                        <p class="text-white small"> Sale Caja </p>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/descarga (4)-fotor-bg-remover-2024100313322.png" class="img-fluid" style="max-width: 150px; height: 150px;">
+                        <p class="text-white small"> Caja Carambit</p>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/descarga-fotor-bg-remover-2024100313334.png" class="img-fluid" style="max-width: 150px;">
+                        <p class="text-white small"> Caja AWP </p>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/CAJA 1_preview_rev_1.png" class="img-fluid" style="max-width: 150px;">
+                        <p class="text-white small"> SC pro Caja </p>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/CAJA2_preview_rev_1.png" class="img-fluid" style="max-width: 150px;">
+                        <p class="text-white small">Caja Lore </p>
+                        
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/CAJA 3_preview_rev_1.png" class="img-fluid" style="max-width: 150px; height: 150px;">
+                        <p class="text-white small"> Caja Discord </p>
+                    </div>
+                    <div class="col-md-3">
+                        <img src="img/CAJA 4_preview_rev_1.png" class="img-fluid" style="max-width: 150px;">
+                        <p class="text-white small"> Caja guantes </p>
+                       
+                    </div>
+                </div>
+
+                <br><br><br>
+                <h3 class="text-white">Porcetaje de jugadores en la ruleta</h3>
+                <div class="progress my-4">
+                    <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-custom">Jugar</button>
+                </div>
+                
+                <br><br>
+                <form>
+                    <h3 class="text-white">¿Aún no formas parte de SkinClub?</h3>
+
+                    <div class="form-group">
+                        <label for="nombre" class="text-white">Usuario</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Introduce tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="correo" class="text-white">Correo electrónico</label>
+                        <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electrónico">
+                    </div>
+                    <div class="form-group">
+                        <label for="Localizador" class="text-white">Localizador de inventario: </label>
+                        <textarea class="form-control" id="mensaje" rows="3" placeholder="Tu mensaje"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-custom">Enviar</button>
+                </form>
+            </div>
+
+           
+            <aside class="right-aside">
+                <h2 class="text-center">Ofertas Exclusivas</h2>
+                <br><br>
+                <div class="text-center">
+                    <img src="img/dragonlore.png" class="img-fluid" style="max-width: 150px;">
+                    <p class="text-white small">~ AWP Dragon lore ~</p>
+                    <p class="text-white">12.000€</p>
+
+                    <img src="img/karambitbluegem.png" class="img-fluid" style="max-width: 150px;">
+                    <p class="text-white small">~ Karambit Blue Gem ~</p>
+                    <p class="text-white">1,5M€</p>
+
+                    <img src="img/howl.png" class="img-fluid" style="max-width: 150px;">
+                    <p class="text-white small">~ M4A4 Howl ~</p>
+                    <p class="text-white">7.000€</p>
+
+                    <img src="img/guantes.png" class="img-fluid" style="max-width: 150px;">
+                    <p class="text-white small">~ Guantes hermano de armas ~</p>
+                    <p class="text-white">25.000€</p>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 SkinClub Danel Egues. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
