@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="paginaInicio.css">
+</head>
+<body>
+    <div class="ul">
+        <ul class="menu-list">
+            <div class="menu-container">
+                <div class="apartadoLogo">
+                    <img src="../img/LogoSkinDrop.png" alt="">
+                    <span>Skin.club</span>
+                </div>
+                <div class="menu-items">
+                    <li class="active" onclick="window.location.href= 'paginaInicio.html'"><i class="fa-solid fa-house-chimney"></i></li>
+                    <li><i class="fa-solid fa-shop"></i></li>
+                    <li><i class="fa-solid fa-arrow-right-arrow-left"></i></li>
+                    <li><i class="fa-solid fa-crosshairs"></i></li>
+                    <li><i class="fa-solid fa-box-open"></i></li>
+                    <li><i class="fa-solid fa-user"></i></li>
+                </div>
+            </div>
+            <div class="marker"></div>
+        </ul>
+        
+    </div>
+    
+
+    <div class="contenidoCentro">
+        <div class="boxIzquierda">
+            <div class="textoIzquierda">
+                <h1>Proximamente ESL Pro League</h1>
+            </div><br><br>
+            
+            <div class="videoIzquierda">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/uE9BEO2pV-4" frameborder="0" allowfullscreen></iframe>
+            </div><br><br><br>
+
+            <div class="skinsPlayers">
+                <h3>¡Las skinks de los mejores!</h3>
+                <ul>
+                    <li><a href="#"></a> S1mple</li>
+                    <li><a href="#"></a> ZywOo</li>
+                    <li><a href="#"></a> sh1ro</li>
+                    <li><a href="#"></a> B1t</li>
+                    <li><a href="#"></a> ropz</li>
+                    <li><a href="#"></a> Flusha</li>
+                    <li><a href="#"></a> danuflio</li>
+                    <li><a href="#"></a> Electronic</li>
+                    <li><a href="#"></a> Hobbit</li>
+                    <li><a href="#"></a> Ev1</li>
+                </ul>
+            </div>
+        </div>
+    
+        <div id="popup" class="popup" onclick="ocultarPopup(event)">
+            <div class="popup-content" onclick="event.stopPropagation()">
+                <span class="popup-close" onclick="ocultarPopup(event)"></span>
+                <h2 id="popup-titulo"></h2>
+                <img id="popup-imagen" src="" alt="">
+                <p id="popup-descripcion"></p>
+                <button onclick="window.location.href='../index.html'">Abrir</button>
+            </div>
+        </div>
+
+        <div class="boxCentro">
+            <br><br><h1 class="textoCentro">¿A quien no le mola abrir cajas?</h1>
+                <br><br>
+                
+                <div class="cajas">
+
+                    <div class="primeraFila">
+                        <section class="seccion-hero">
+                            <div class="contenedor-cartas">
+                    
+                                <div class="carta" onclick="mostrarInfoCaja('caja1')">
+                                    <div class="fondo-carta" style="background-image: url(../img/CAJA\ 1_preview_rev_1.png); background-repeat: no-repeat;"></div>
+                                    <div class="contenido">
+                                        <div class="categoria-carta">Caja1</div>
+                                        <h3 class="titulo-carta">4.99€</h3>
+                                    </div>
+                                </div>
+                    
+                                <div class="carta" onclick="mostrarInfoCaja('caja2')">
+                                    <div class="fondo-carta" style="background-image: url(../img/CAJA2_preview_rev_1.png); background-repeat: no-repeat;"></div>
+                                    <div class="contenido">
+                                        <div class="categoria-carta">Caja2</div>
+                                        <h3 class="titulo-carta">4.99€</h3>
+                                    </div>
+                                </div>
+                    
+                                <div class="carta" onclick="mostrarInfoCaja('caja3')">
+                                    <div class="fondo-carta" style="background-image: url(../img/CAJA\ 3_preview_rev_1.png); background-repeat: no-repeat;"></div>
+                                    <div class="contenido">
+                                        <div class="categoria-carta">Caja3</div>
+                                        <h3 class="titulo-carta">4.99€</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+
+
+                    <div class="segundaFila">
+                        <section class="seccion-hero">
+                            <div class="contenedor-cartas">
+                    
+                                <div class="carta" onclick="mostrarInfoCaja('caja4')">
+                                    <div class="fondo-carta" style="background-image: url('../img/CAJA 4_preview_rev_1.png'); background-repeat: no-repeat;" ></div>
+
+                                    <div class="contenido">
+                                        <div class="categoria-carta">Caja3</div>
+                                        <h3 class="titulo-carta">4.99€</h3>
+                                    </div>
+                                </div>
+                    
+                                <div class="carta" onclick="mostrarInfoCaja('caja5')">
+                                    <div class="fondo-carta" style="background-image: url(../img/descarga\ \(2\)-fotor-bg-remover-2024100313255.png); background-repeat: no-repeat;"></div>
+                                    <div class="contenido">
+                                        <div class="categoria-carta">Caja4</div>
+                                        <h3 class="titulo-carta">4.99€</h3>
+                                    </div>
+                                </div>
+                    
+                                <div class="carta" onclick="mostrarInfoCaja('caja6')">
+                                    <div class="fondo-carta" style="background-image: url(../img/descarga\ \(3\)-fotor-bg-remover-202410031336.png); background-repeat: no-repeat;"></div>
+                                    <div class="contenido">
+                                        <div class="categoria-carta">Caja5</div>
+                                        <h3 class="titulo-carta">4.99€</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+        </div>
+        
+        <div class="boxDerecha">
+            <!-- Contenido de la caja derecha -->
+        </div>
+    </div>
+    
+   
+
+
+    <script src="script.js"></script>
+</body>
+</html>
