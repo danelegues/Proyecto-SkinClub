@@ -3,13 +3,14 @@
 /*---------------------[ ESTILOS GENERALES ]----------------------*/
 
 body {
-    min-height: 100vh;
+min-height: 100vh;
     margin: 0;
     background: #222;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+   
 }
 
 /*---------------------[ BARRA DE NAVEGACIÓN ]----------------------*/

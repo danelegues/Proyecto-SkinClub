@@ -78,10 +78,10 @@
           });
 
           // Comenzamos a desacelerar después de 3 segundos
-          if (elapsedTime < 3000) {
+          if (elapsedTime < 3[000) {
             angle += speed; // Velocidad inicial rápida
           } else if (speed > 0.01) {
-            speed *= 0.98; // Reducción de la velocidad más suave
+            speed *= 0.99; // Reducción de la velocidad más suave
             angle += speed;
           } else if (!isAnimationStopped) {
             // Destacamos la carta más cercana y mostramos el popup una vez

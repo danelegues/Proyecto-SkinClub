@@ -20,7 +20,7 @@
                     <li><i class="fa-solid fa-arrow-right-arrow-left"></i></li>
                     <li><i class="fa-solid fa-crosshairs"></i></li>
                     <li><i class="fa-solid fa-box-open"></i></li>
-                    <li><i class="fa-solid fa-user"></i></li>
+                    <li onclick="mostrarInfoUser()"><i class="fa-solid fa-user"></i></li>
                 </div>
             </div>
             <div class="marker"></div>
@@ -62,7 +62,17 @@
                 <h2 id="popup-titulo"></h2>
                 <img id="popup-imagen" src="" alt="">
                 <p id="popup-descripcion"></p>
-                <button onclick="window.location.href='../index.html'">Abrir</button>
+                <button onclick="window.location.href='../index.html'" style="border-style: none; border: 2px solid rgb(177, 115, 0); color: white;" >Abrir</button>
+            </div>
+        </div>
+
+        <div id="popup" class="popup" onclick="ocultarPopup(event)">
+            <div class="popup-content" onclick="event.stopPropagation()">
+                <span class="popup-close" onclick="ocultarPopup(event)"></span>
+                <h2 id="popup-titulo"></h2>
+                <img id="popup-imagen" src="" alt="">
+                <p id="popup-descripcion"></p>
+                <button onclick="window.location.href='../index.html'" style="border-style: none; border: 2px solid rgb(177, 115, 0); color: white;" >Abrir</button>
             </div>
         </div>
 

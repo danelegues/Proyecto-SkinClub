@@ -61,6 +61,26 @@ function mostrarInfoCaja(caja) {
     document.getElementById('popup').style.display = 'flex';
 }
 
+function mostrarInfoUser() {
+    
+    const infoUserJSON = [
+        {idUser: "1", nombreUser:"JosuTxerri", valorCuenta:"500€", CsCoins:"120CsC", fechaCreacion:"14/11/2024"}];
+
+    
+
+    if (caja === 'caja1') {
+        imagenCaja = '../img/CAJA 1_preview_rev_1.png'; 
+        titulo = 'Caja Lore';
+        descripcion = 'caja 1.';
+    } 
+
+    // Mostrar el contenido en el pop-up
+    document.getElementById('popup-titulo').innerText = titulo;
+    document.getElementById('popup-descripcion').innerText = descripcion;
+    document.getElementById('popup-imagen').src = imagenCaja; 
+    document.getElementById('popup').style.display = 'flex';
+}
+
 // Función para ocultar el pop-up
 function ocultarPopup(event) {
     event.stopPropagation(); 
