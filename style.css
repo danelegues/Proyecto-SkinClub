@@ -5,10 +5,12 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #222;
-  font-size: 1.75em; 
+  font-size: 1.75em;
   position: relative;
   overflow: hidden;
 }
+
+
 
 
 body::before {
@@ -26,24 +28,30 @@ body::before {
   z-index: -1;
 }
 
+
 .nombreCaja {
   color: rgb(233, 219, 219);
+  margin-top: -160px;
 }
+
 
 .contenidoSuperior {
   color: orange;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 40px;
 }
+
 
 .contenidoInferior {
   color: orange;
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
+
 }
+
 
 .punteroSuperior {
   background-color: orange;
@@ -53,6 +61,7 @@ body::before {
   box-shadow: 0px 0px 20px orange;
 }
 
+
 .punteroInferior {
   background-color: orange;
   height: 1px;
@@ -61,207 +70,92 @@ body::before {
   box-shadow: 0px 0px 20px orange;
 }
 
+
 .trianguloInferior {
-  width: 0; 
-  height: 0; 
-  border-left: 10px solid transparent; 
-  border-right: 10px solid transparent; 
-  border-bottom: 10px solid orange; 
-  margin-top: 0; 
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid orange;
+  margin-top: 0;
 }
 
+
 .trianguloSuperior {
-  width: 0; 
-  height: 0; 
-  border-left: 10px solid transparent; 
-  border-right: 10px solid transparent; 
-  border-top: 10px solid orange; 
-  margin-bottom: 0; 
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid orange;
+  margin-bottom: 0;
 }
+
 
 .container {
   perspective: 800px;
-  width: 600px; 
-  height: 300px; 
+  width: 600px;
+  height: 300px;
   position: relative;
 }
 
+.nombreCaja {
+  margin-bottom: 50px;
+}
+.botonSalida  button{
+ background-color: orange;
+ color: white;
+ width: 100px;
+ height: 50px;
+ border-radius: 5px;
+ border-style: none;
+ border: 1px solid rgb(160, 104, 0);
+ padding: 0px;
+ font-size: 20px;
+ margin-top: 120px ;
+}
+
+
 .tarjeta {
-  width: 110px; 
-  height: 150px; 
+  width: 110px;
+  height: 150px;
   background-color: #442222;
-  font-size: 50px; 
+  font-size: 50px;
   position: absolute;
-  top: 60px; 
-  left: 245px; 
+  top: 60px;
+  left: 245px;
   border-radius: 10px;
   text-align: center;
-  animation: Carrusel 4s linear infinite;
+  
 }
 
-@keyframes Carrusel {
-  from {
-    transform: rotateY(0deg) translateZ(300px);
-    z-index: 10;
-    opacity: 0.9;
-  }
-  50% {
-    z-index: -10;
-  }
-  to {
-    transform: rotateY(360deg) translateZ(300px);
-    z-index: 10;
-  }
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 700px;
+  height: 500px;
+  background-color: #181818;
+  border-radius: 20px;
+  border: orange;
+  box-shadow: orange 0px 0px 5px;
+  color: white;
+  
+  position: fixed; 
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 9999; 
 }
 
-#tarjeta1 {
-  background-image: url(img/akruleta.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-shadow: 0px 0px 10px rgb(0, 102, 255);
-  animation-delay: 0s;
-}
 
-#tarjeta2 {
-  background-image: url(img/aung.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -0.25s;
-  box-shadow: 0px 0px 10px rgb(0, 102, 255);
-}
 
-#tarjeta3 {
-  background-image: url(img/glock.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -0.5s;
-  box-shadow: 0px 0px 10px rgb(0, 102, 255);
-}
-
-#tarjeta4 {
-  background-image: url(img/scout.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -0.75s;
-  box-shadow: 0px 0px 10px rgb(0, 102, 255);
-}
-
-#tarjeta5 {
-  background-image: url(img/howl.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -1s;
-  box-shadow: 0px 0px 10px rgb(255, 0, 0);
-}
-
-#tarjeta6 {
-  background-image: url(img/dragonlore.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -1.25s;
-  box-shadow: 0px 0px 10px rgb(255, 166, 0);
-}
-
-#tarjeta7 {
-  background-image: url(img/karambitbluegem.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -1.5s;
-  box-shadow: 0px 0px 10px rgb(0, 255, 128);
-}
-
-#tarjeta8 {
-  background-image: url(img/guantes.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -1.75s;
-  box-shadow: 0px 0px 10px rgb(255, 0, 0);
-}
-
-#tarjeta9 {
-  background-image: url(img/famas.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -2s;
-  box-shadow: 0px 0px 10px rgb(0, 102, 255);
-}
-
-#tarjeta10 {
-  background-image: url(img/deagle.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -2.25s;
-  box-shadow: 0px 0px 10px rgb(0, 102, 255);
-}
-
-#tarjeta11 {
-  background-image: url(img/bowie.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -2.5s;
-  box-shadow: 0px 0px 10px rgb(255, 255, 0);
-}
-
-#tarjeta12 {
-  background-image: url(img/howl.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -2.75s;
-  box-shadow: 0px 0px 10px rgb(255, 255, 0);
-}
-
-#tarjeta13 {
-  background-image: url(img/glockSelva.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -3s;
-  box-shadow: 0px 0px 10px rgb(255, 255, 0);
-}
-
-#tarjeta14 {
-  background-image: url(img/UMP.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -3.25s;
-  box-shadow: 0px 0px 10px rgb(255, 255, 0);
-}
-
-#tarjeta15 {
-  background-image: url(img/recortada.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -3.5s;
-  box-shadow: 0px 0px 10px rgb(255, 255, 0);
-}
-
-#tarjeta16 {
-  background-image: url(img/M4A1.png);
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation-delay: -3.75s;
-  box-shadow: 0px 0px 10px rgb(255, 255, 0);
-}
 
 .tarjeta h3 {
   color: white;
-  font-size: 9px; 
+  font-size: 9px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin-top: 120px; 
+  margin-top: 120px;
   background-color: #ff0000;
 }
+
+

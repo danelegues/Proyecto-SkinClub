@@ -1,48 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Lista de cartas con sus respectivos id y nombre
+        const cardsJSON = [
+          { id: "tarjeta1", name: "AK47 MADERA AZUL", imgArma: "img/akruleta.png", animationDelay:"0s", boxShadow: "0px 0px 10px rgb(0, 102, 255)"},
+          { id: "tarjeta2", name: "AUG FLORES", imgArma: "img/aung.png", animationDelay:"-0.25s", boxShadow: "0px 0px 10px rgb(0, 102, 255)"},
+          { id: "tarjeta3", name: "GLOCK-18 MARINA", imgArma: "img/glock.png", animationDelay:"-0.5s", boxShadow: "0px 0px 10px rgb(0, 102, 255)"},
+          { id: "tarjeta4", name: "SCOUT ARENA FINA", imgArma: "img/scout.png", animationDelay:"-0.75s", boxShadow: "0px 0px 10px rgb(0, 102, 255)"},
+          { id: "tarjeta5", name: "M4A4 HOWL", imgArma: "img/howl.png", animationDelay:"-1s", boxShadow: "0px 0px 10px rgb(255, 0, 0)"},
+          { id: "tarjeta6", name: "AWP DAGON LORE", imgArma: "img/dragonlore.png", animationDelay:"-1.25s", boxShadow: "0px 0px 10px rgb(255, 166, 0)"},
+          { id: "tarjeta7", name: "KARAMBIT BLUE GEM", imgArma: "img/karambitbluegem.png", animationDelay:"-1.5s", boxShadow: "0px 0px 10px rgb(0, 255, 128)"},
+          { id: "tarjeta8", name: "GUANTES DE ARMAS", imgArma: "img/guantes.png", animationDelay:"-1.75s", boxShadow: "0px 0px 10px rgb(255, 0, 0)"},
+          { id: "tarjeta9", name: "FAMAS LINEAS ROJAS", imgArma: "img/famas.png", animationDelay:"-2s", boxShadow: "0px 0px 10px rgb(0, 102, 255)"},
+          { id: "tarjeta10", name: "DEAGLE TATUADA", imgArma: "img/deagle.png", animationDelay:"-2.25s", boxShadow: "0px 0px 10px rgb(0, 102, 255)"},
+          { id: "tarjeta11", name: "M4A4 INDUSTRIAL", imgArma: "img/howl.png", animationDelay:"-2.5s", boxShadow: "0px 0px 10px rgb(255, 255, 0)"},
+          { id: "tarjeta12", name: "BOWIE TIGER TOOTH", imgArma: "img/bowie.png", animationDelay:"-2.75s", boxShadow: "0px 0px 10px rgb(255, 255, 0)"},
+          { id: "tarjeta13", name: "GLOCK-18 SELVA", imgArma: "img/glockSelva.png", animationDelay:"-3s", boxShadow: "0px 0px 10px rgb(255, 255, 0)"},
+          { id: "tarjeta14", name: "UMP-45 NEON", imgArma: "img/UMP.png", animationDelay:"-3.25s", boxShadow: "0px 0px 10px rgb(255, 0, 0)"},
+          { id: "tarjeta15", name: "RECORTADA BESOS", imgArma: "img/recortada.png", animationDelay:"-3.5s", boxShadow: "0px 0px 10px rgb(255, 0, 0)"},
+          { id: "tarjeta16", name: "M4A1 BLANCO NUCLEAR", imgArma: "img/M4A1.png", animationDelay:"-3.75s", boxShadow: "0px 0px 10px rgb(255, 0, 0)"}
+        ];
+
+        const cardsContainer = document.getElementById("cardContainer");
+
+        // Desordenamos las cartas aleatoriamente y las insertamos en el contenedor
+        cardsJSON.sort(() => Math.random() - 0.5).forEach((card) => {
+          const cardElement = document.createElement("div");
+          cardElement.classList.add("tarjeta");
+		  cardElement.style.backgroundImage = `url('${card.imgArma}')`;
+		  cardElement.style.backgroundSize = "contain";
+		  cardElement.style.backgroundPosition = "center";
+		  cardElement.style.backgroundRepeat = "no-repeat";
+		  cardElement.style.boxShadow = card.boxShadow;
+		  cardElement.animationDelay = card.animationDelay;
+          cardElement.id = card.id;
+          const h3 = document.createElement("h3");
+          h3.textContent = card.name;
+          cardElement.appendChild(h3);
+          cardsContainer.appendChild(cardElement);
+        });
+
+        // Referencias a las cartas y contenedor para animación
+        const cards = document.querySelectorAll(".tarjeta");
+        const container = document.querySelector(".container");
+        let angle = 0;
+        let speed = 5;
+        let animationStartTime = Date.now();
+        let isAnimationStopped = false;
+
+        function updateCards() {
+          const currentTime = Date.now();
+          const elapsedTime = currentTime - animationStartTime;
+
+          // Calculamos el radio basado en el tamaño del contenedor
+          const radius = Math.min(container.offsetWidth, container.offsetHeight) / 4;
+
+          // Animamos las cartas (rotación y posicionamiento en 3D)
+          cards.forEach((card, index) => {
+            const cardAngle = angle + index * (360 / cards.length);
+            const radian = (cardAngle * Math.PI) / 180;
+            const x = radius * Math.cos(radian);
+            const y = radius * Math.sin(radian);
+
+            card.style.transform = `rotateY(${cardAngle}deg) translateZ(300px)`;
+            card.style.zIndex = Math.round(1000 * Math.cos(radian));
+          });
+
+          // Comenzamos a desacelerar después de 3 segundos
+          if (elapsedTime < 3000) {
+            angle += speed; // Velocidad inicial rápida
+          } else if (speed > 0.01) {
+            speed *= 0.98; // Reducción de la velocidad más suave
+            angle += speed;
+          } else if (!isAnimationStopped) {
+            // Destacamos la carta más cercana y mostramos el popup una vez
+            isAnimationStopped = true;
+
+            let closestCard = null;
+            let highestZIndex = -Infinity;
+
+            cards.forEach((card) => {
+              const zIndex = parseInt(card.style.zIndex, 10);
+              if (zIndex > highestZIndex) {
+                highestZIndex = zIndex;
+                closestCard = card;
+              }
+            });
+
+            if (closestCard) {
+              closestCard.style.backgroundColor = "yellow";
+              mostrarArma(closestCard);
+            }
+          }
+
+          // Continuamos la animación solo si no está detenida
+          if (!isAnimationStopped) {
+            requestAnimationFrame(updateCards);
+          }
+        }
+
+        // Aplicamos un estilo básico para la animación
+        cards.forEach((card) => {
+          card.style.position = "absolute";
+          card.style.transition = "transform 0.1s linear";
+        });
+
+        // Iniciamos la animación
+        updateCards();
+      });
+
+      // Función para mostrar la popup
+      function mostrarArma(card) {
+  // Obtener el nombre de la carta seleccionada
+  const cardName = card.querySelector("h3").textContent;
+  const cardImg = card.style.backgroundImage.replace('url("', '').replace('")', '');
+
+  document.getElementById('popup').style.display = 'block';
+  document.getElementById('popup').innerHTML = `
+    <div class="popup-content">  
+      <h2 id="popup-titulo">${cardName}</h2>
+      <div id="popup-imagen-container" style="width: 50%;  display: flex; justify-content: center; align-items: center;">
+        <img id="popup-imagen" src="${cardImg}" alt="Imagen de la carta" style="object-fit: contain; width: 75%; height: 100%; max-width: 500px; max-height: 500px;">
+      </div>
+      <p id="popup-descripcion"></p>
+      <button onclick="window.location.href='PaginaInicio/paginaInicio.html'">Salir</button>
+    </div>
+  `;
+}
 
 
-</head>
-<body>
-	
-	
-	
-	<div class="contenidoSuperior">
-		<div class="punteroSuperior"></div>	
-		<div class="trianguloSuperior"></div>
-	</div>
 
-	<div class="container">
-		<div class="tarjeta" id="tarjeta1"><h3>AK47 MADERA AZUL</h3></div>
-		<div class="tarjeta" id="tarjeta2"><h3>AUG FLORES</h3></div>
-		<div class="tarjeta" id="tarjeta3"><h3>GLOCK-18 MARINA</h3></div>
-		<div class="tarjeta" id="tarjeta4"><h3>SCOUT ARENA FINA</h3></div>
-		<div class="tarjeta" id="tarjeta5"><h3>M4A4 HOWL</h3></div>
-		<div class="tarjeta" id="tarjeta6"><h3>AWP DAGON LORE</h3></div>
-		<div class="tarjeta" id="tarjeta7"><h3>KARAMBIT BLUE GEM</h3></div>
-		<div class="tarjeta" id="tarjeta8"><h3>GUANTES DE ARMAS</h3></div>
-		<div class="tarjeta" id="tarjeta9"><h3>FAMAS LINEAS ROJAS</h3></div>
-		<div class="tarjeta" id="tarjeta10"><h3>DEAGLE TATUADA</h3></div>
-		<div class="tarjeta" id="tarjeta11"><h3>M4A4 INDUSTRIAL</h3></div>
-		<div class="tarjeta" id="tarjeta12"><h3>BOWIE TIGER TOOTH</h3></div>
-		<div class="tarjeta" id="tarjeta13"><h3>GLOCK-18 SELVA</h3></div>
-		<div class="tarjeta" id="tarjeta14"><h3>UMP-45 NEON</h3></div>
-		<div class="tarjeta" id="tarjeta15"><h3>RECORTADA BESOS</h3></div>
-		<div class="tarjeta" id="tarjeta16"><h3>M4A1 BLANCO NUCLEAR</h3></div>
-		
-	</div>
+      // Función para ocultar el popup
+      function ocultarPopup(event) {
+        event.stopPropagation();
+        document.getElementById('popup').style.display = 'none';
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Título de la caja -->
+    <div class="nombreCaja">
+      <h1 class="kenia-font">CAJA GAMMA</h1>
+    </div>
 
-	<div class="contenidoInferior">
-		<div class="trianguloInferior"></div>
-		<div class="punteroInferior"></div>	
-	</div>
-	
-</body>
+    <!-- Contenedor de elementos decorativos en la parte superior -->
+    <div class="contenidoSuperior">
+      <div class="punteroSuperior"></div>
+      <div class="trianguloSuperior"></div>
+    </div>
+
+    <!-- Contenedor donde se generarán las cartas -->
+    <div class="container" id="cardContainer"></div>
+
+    <!-- Contenedor de elementos decorativos en la parte inferior -->
+    <div class="contenidoInferior">
+      <div class="trianguloInferior"></div>
+      <div class="punteroInferior"></div>
+    </div>
+
+    <!-- Popup de detalles de la carta -->
+    <div id="popup" class="popup"></div>
+  </body>
 </html>
