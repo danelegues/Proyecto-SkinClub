@@ -304,7 +304,7 @@ li:nth-child(4).active ~ .marker::before {
     text-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
 }
 
-/*---------------------[ POP-UP ]----------------------*/
+/*---------------------[ POP-UP CAJA ]----------------------*/
 
 .popup {
     display: none;
@@ -346,3 +346,52 @@ li:nth-child(4).active ~ .marker::before {
     color: #333;
     cursor: pointer;
 }
+
+/*---------------------[ POP-UP CAJA ]----------------------*/
+
+
+
+
+/*---------------------[ POP-UP USER ]----------------------*/
+
+.popup2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.popup-content2 {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    height: 800px;
+    text-align: center;
+    color: white;
+    position: relative;
+    box-shadow: inset 0 0 0 1px orange;
+}
+
+.popup-content button {
+    width: 80px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: orange;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333;
+    cursor: pointer;
+}
+/*---------------------[ POP-UP USER ]----------------------*/
