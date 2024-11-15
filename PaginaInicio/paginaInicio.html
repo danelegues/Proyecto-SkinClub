@@ -15,7 +15,7 @@
                     <span>Skin.club</span>
                 </div>
                 <div class="menu-items">
-                    <li class="active" onclick="window.location.href= 'paginaInicio.html'"><i class="fa-solid fa-house-chimney"></i></li>
+                    <li class="active" onclick="window.location.href= '/paginaInicio.html'"><i class="fa-solid fa-house-chimney"></i></li>
                     <li><i class="fa-solid fa-shop"></i></li>
                     <li><i class="fa-solid fa-arrow-right-arrow-left"></i></li>
                     <li><i class="fa-solid fa-crosshairs"></i></li>
@@ -27,7 +27,7 @@
         </ul>
         
     </div>
-    
+
 
     <div class="contenidoCentro">
         <div class="boxIzquierda">
@@ -66,14 +66,50 @@
             </div>
         </div>
 
-        <div id="popup2" class="popup2" onclick="ocultarPopup(event)">
+        <div id="popup2" class="popup2" onclick="ocultarPopup2(event)">
             <div class="popup-content2" onclick="event.stopPropagation()">
                 <span class="popup-close" onclick="ocultarPopup(event)"></span>
-                <h2 id="popup-Username"></h2>
-                <img id="popup-profile" src="" alt="">
-                <p>S</p>
-                <p id="popup-Saldo"></p>
-                <button onclick="window.location.href='../index.html'" style="border-style: none; border: 2px solid rgb(177, 115, 0); color: white;" >Abrir</button>
+
+                <div class="box1">
+                    <div class="profile">
+                        <li style="list-style: none;"><i class="fa-solid fa-user"></i></li>
+                    </div>
+
+                    <div class="boxName_Email">
+                        <h2 id="popup-Username"></h2>
+                        <p id="userEmail"></p>
+                    </div>
+                </div>
+
+                <div class="infoUser" style="margin: 20px;">
+                    <div class="valorCuenta">
+                        <p class="valorCuentaP">Valor cuenta: </p>
+                        <div class="valorCuentaUser">
+                            <P>3KJLKDSJ</P>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infoUser" style="margin: 20px;">
+                    <div class="valorCuenta">
+                        <p class="valorCuentaP">CsCoins: </p>
+                        <div class="valorCuentaUser">
+                            <P>3KJLKDSJ</P>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="infoUser" style="margin: 20px;">
+                    <div class="valorCuenta">
+                        <p class="valorCuentaP">Usuario desde: </p>
+                        <div class="valorCuentaUser">
+                            <P>3KJLKDSJ</P>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <button onclick="window.location.href='../login.html'">Log out</button>
+
             </div>
         </div>
 

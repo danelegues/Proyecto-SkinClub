@@ -10,7 +10,7 @@ min-height: 100vh;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-   
+    overflow-x: hidden;
 }
 
 /*---------------------[ BARRA DE NAVEGACIÓN ]----------------------*/
@@ -163,6 +163,7 @@ min-height: 100vh;
     border-radius: 15px;
     margin: 10px;
     margin-top: 100px;
+    margin-right: 50px;
 }
 
 /*---------------------[ ESTILOS DE LA CABECERA Y ICONOS ]----------------------*/
@@ -359,24 +360,26 @@ li:nth-child(4).active ~ .marker::before {
     position: fixed;
     top: 0;
     left: 0;
-    width: 50vw;
+    width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.7);
     justify-content: center;
     align-items: center;
     z-index: 1001;
+    justify-content: flex-end;
 }
 
 .popup-content2 {
-    background-color: #222;
+    background-color: #141414;
     padding: 20px;
     border-radius: 10px;
     width: 300px;
-    height: 800px;
+    height: 450px;
     text-align: center;
     color: white;
     position: relative;
-    box-shadow: inset 0 0 0 1px orange;
+    box-shadow: inset 0 0 0 1px rgb(54, 54, 54); 
+    margin-right: 40px;
+    margin-top: -250px;
 }
 
 .popup-content button {
@@ -393,5 +396,67 @@ li:nth-child(4).active ~ .marker::before {
     font-size: 30px;
     color: #333;
     cursor: pointer;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    margin: 20px;
+}
+
+.box2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.boxName_Email h2 {
+    margin-bottom: 0px;
+}
+
+.boxName_Email p {
+    margin: 0px;
+    color: #444;
+    
+}
+
+.profile, .profile i {
+    background-color: #222;
+    border-radius: 50%; 
+    width: 100px; 
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.popup-content2 button {
+    background-color: orange;
+    border-radius: 3px;
+    border-style: none;
+    border: 2px solid rgb(177, 115, 0); 
+    color: white;
+    width: 70px;
+    height: 30px;
+}
+
+.infoUser {
+    margin: 20px;
+}
+.valorCuentaP {
+    margin-bottom: 3px ;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.valorCuentaUser {
+    background-color: #222;
+    border-radius: 15px;
+    height: 30px; display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
 }
 /*---------------------[ POP-UP USER ]----------------------*/

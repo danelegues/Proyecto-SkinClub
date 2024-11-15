@@ -1,7 +1,7 @@
+// Función para actualizar la posición del marcador
 const $marker = document.querySelector('.marker');
 const $menuList = document.querySelectorAll('.menu-list li'); 
 
-// Función para actualizar la posición del marcador
 function setMarkerPosition($li) {
     $marker.style.left = $li.offsetLeft + 'px';
     $marker.style.width = $li.offsetWidth + 'px';
@@ -22,60 +22,49 @@ $menuList.forEach(($li) => {
     });
 });
 
-// Mostrar información de la caja al hacer clic
-function mostrarInfoCaja(caja) {
-    let imagenCaja = '';
-    let titulo = '';
-    let descripcion = ''; 
+// Datos de las cajas
+const cajasJSON = [
+    {id: "caja1", nombre: "Caja Lore", imagenCaja: "../img/CAJA 1_preview_rev_1.png", descripcion: "caja 1."},
+    {id: "caja2", nombre: "Caja Lore", imagenCaja: "../img/CAJA2_preview_rev_1.png", descripcion: "caja 2."},
+    {id: "caja3", nombre: "Caja Discord", imagenCaja: "../img/CAJA 3_preview_rev_1.png", descripcion: "caja Discord."},
+    {id: "caja4", nombre: "Caja 4", imagenCaja: "../img/CAJA 4_preview_rev_1.png", descripcion: "caja 4."},
+    {id: "caja5", nombre: "Caja 5", imagenCaja: "../img/descarga (2)-fotor-bg-remover-2024100313255.png", descripcion: "caja 5."},
+    {id: "caja6", nombre: "Caja 6", imagenCaja: "../img/descarga (3)-fotor-bg-remover-202410031336.png", descripcion: "caja 6."}
+];
 
-    if (caja === 'caja1') {
-        imagenCaja = '../img/CAJA 1_preview_rev_1.png'; 
-        titulo = 'Caja Lore';
-        descripcion = 'caja 1.';
-    } else if (caja === 'caja2') {
-        imagenCaja = '../img/CAJA2_preview_rev_1.png'; 
-        titulo = 'Caja Lore';
-        descripcion = 'caja 2.';
-    } else if (caja === 'caja3') {
-        imagenCaja = '../img/CAJA 3_preview_rev_1.png'; 
-        titulo = 'Caja Discord';
-        descripcion = 'caja Discord.';
-    } else if (caja === 'caja4') {
-        imagenCaja = '../img/CAJA 4_preview_rev_1.png'; 
-        titulo = 'Caja 4';
-        descripcion = 'caja 4.';
-    } else if (caja === 'caja5') {
-        imagenCaja = '../img/descarga (2)-fotor-bg-remover-2024100313255.png'; 
-        titulo = 'Caja 5';
-        descripcion = 'caja 5.';
-    } else if (caja === 'caja6') {
-        imagenCaja = '../img/descarga (3)-fotor-bg-remover-202410031336.png'; 
-        titulo = 'Caja 6';
-        descripcion = 'caja 6.';
+// Función para mostrar la información de la caja
+function mostrarInfoCaja(cajaId) {
+    const caja = cajasJSON.find(caja => caja.id === cajaId);
+    if (caja) {
+        document.getElementById('popup-titulo').innerText = caja.nombre;
+        document.getElementById('popup-descripcion').innerText = caja.descripcion;
+        document.getElementById('popup-imagen').src = caja.imagenCaja;
+        document.getElementById('popup').style.display = 'flex';
     }
-
-    // Mostrar el contenido en el pop-up
-    document.getElementById('popup-titulo').innerText = titulo;
-    document.getElementById('popup-descripcion').innerText = descripcion;
-    document.getElementById('popup-imagen').src = imagenCaja; 
-    document.getElementById('popup').style.display = 'flex';
 }
-
 function mostrarInfoUser() {
-    let imagenCaja = '';
+    let userEmail = '';
     let nombreUser = '';
     let descripcion = ''; 
 
-        imagenCaja = '../img/CAJA 1_preview_rev_1.png'; 
+        userEmail = "user@gmail.com"
         nombreUser = 'User3284723';
         descripcion = 'caja 1.';
 
     // Mostrar el contenido en el pop-up
     document.getElementById('popup-Username').innerText = nombreUser;
-    document.getElementById('popup-profile').src = imagenCaja; 
+    document.getElementById('userEmail').innerText = userEmail;
+
     document.getElementById('popup2').style.display = 'flex';
 }
 
+// Evento para mostrar información de la caja al hacer clic
+document.querySelectorAll('.menu-list li').forEach($li => {
+    $li.addEventListener('click', () => {
+        const cajaId = $li.getAttribute('data-caja-id');  // Asegúrate de agregar el atributo data-caja-id en los elementos de la lista
+        mostrarInfoCaja(cajaId);
+    });
+});
 
 // Función para ocultar el pop-up
 function ocultarPopup(event) {
@@ -83,9 +72,20 @@ function ocultarPopup(event) {
     document.getElementById('popup').style.display = 'none';
 }
 
-// Cerrar el pop-up al presionar "Escape"
+function ocultarPopup2(event) {
+    event.stopPropagation(); 
+    document.getElementById('popup2').style.display = 'none';
+}
+
+
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
         ocultarPopup(event);
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        ocultarPopup2(event);
     }
 });
